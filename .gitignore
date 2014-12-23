@@ -181,3 +181,16 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+
+
+
+
+
+
+
+
+
+#append
+/lib/
+!/lib/*.rar
