@@ -10,7 +10,7 @@ namespace TestConsoleApplication
     {
         static void Main(string[] args)
         {
-            //EnumInfo();
+            EnumInfo();
 
             Console.Read();
         }
@@ -18,13 +18,13 @@ namespace TestConsoleApplication
 
         static void EnumInfo()
         {
-            //var temp = TempEnum.A;
-            var temp = TempEnum.B;
-            var data1 = temp.GetData1<TempEnum, string>();
-            var data2 = temp.GetData2<TempEnum, int>();
-            var data3 = temp.GetData3<TempEnum, double>();
-            var data4 = temp.GetData4<TempEnum, int>();
-            var data5 = temp.GetData5<TempEnum, string>();
+            var temp = TempEnum.A;
+            //var temp = TempEnum.B;
+            var data1 = temp.GetData1<string>();
+            var data2 = temp.GetData2<int>();
+            var data3 = temp.GetData3<double>();
+            var data4 = temp.GetData4<int>();
+            var data5 = temp.GetData5<string>();
         }
 
         enum TempEnum

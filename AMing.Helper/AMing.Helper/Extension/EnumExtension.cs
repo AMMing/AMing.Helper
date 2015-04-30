@@ -29,10 +29,10 @@ namespace AMing.Helper.Extension
         /// <param name="enumdata">枚举</param>
         /// <param name="callback"></param>
         /// <returns></returns>
-        public static object GetData<T>(this T enumdata, Func<EnumInfoAttribute, object> callback)
+        public static object GetData(this Enum enumdata, Func<EnumInfoAttribute, object> callback)
         {
             object des = string.Empty;
-            var type = typeof(T);
+            var type = enumdata.GetType();
             var name = type.GetEnumName(enumdata);
             var attr = GetEnumInfoByName(type, name);
 
@@ -41,29 +41,29 @@ namespace AMing.Helper.Extension
 
         #region Get Object Data
 
-        public static object GetData1<T>(this T enumdata)
+        public static object GetData1(this Enum enumdata)
         {
-            return enumdata.GetData<T>(attr => { return attr == null ? null : attr.Data1; });
+            return enumdata.GetData(attr => { return attr == null ? null : attr.Data1; });
         }
 
-        public static object GetData2<T>(this T enumdata)
+        public static object GetData2(this Enum enumdata)
         {
-            return enumdata.GetData<T>(attr => { return attr == null ? null : attr.Data2; });
+            return enumdata.GetData(attr => { return attr == null ? null : attr.Data2; });
         }
 
-        public static object GetData3<T>(this T enumdata)
+        public static object GetData3(this Enum enumdata)
         {
-            return enumdata.GetData<T>(attr => { return attr == null ? null : attr.Data3; });
+            return enumdata.GetData(attr => { return attr == null ? null : attr.Data3; });
         }
 
-        public static object GetData4<T>(this T enumdata)
+        public static object GetData4(this Enum enumdata)
         {
-            return enumdata.GetData<T>(attr => { return attr == null ? null : attr.Data4; });
+            return enumdata.GetData(attr => { return attr == null ? null : attr.Data4; });
         }
 
-        public static object GetData5<T>(this T enumdata)
+        public static object GetData5(this Enum enumdata)
         {
-            return enumdata.GetData<T>(attr => { return attr == null ? null : attr.Data5; });
+            return enumdata.GetData(attr => { return attr == null ? null : attr.Data5; });
         }
 
         #endregion
@@ -71,35 +71,35 @@ namespace AMing.Helper.Extension
 
         #region Get Format Type Data
 
-        public static Return_Type GetData1<T, Return_Type>(this T enumdata)
+        public static T GetData1<T>(this Enum enumdata)
         {
-            var obj = enumdata.GetData1<T>();
+            var obj = enumdata.GetData1();
 
-            return ObjectExtension.To<Return_Type>(obj);
+            return ObjectExtension.To<T>(obj);
         }
-        public static Return_Type GetData2<T, Return_Type>(this T enumdata)
+        public static T GetData2<T>(this Enum enumdata)
         {
-            var obj = enumdata.GetData2<T>();
+            var obj = enumdata.GetData2();
 
-            return ObjectExtension.To<Return_Type>(obj);
+            return ObjectExtension.To<T>(obj);
         }
-        public static Return_Type GetData3<T, Return_Type>(this T enumdata)
+        public static T GetData3<T>(this Enum enumdata)
         {
-            var obj = enumdata.GetData3<T>();
+            var obj = enumdata.GetData3();
 
-            return ObjectExtension.To<Return_Type>(obj);
+            return ObjectExtension.To<T>(obj);
         }
-        public static Return_Type GetData4<T, Return_Type>(this T enumdata)
+        public static T GetData4<T>(this Enum enumdata)
         {
-            var obj = enumdata.GetData4<T>();
+            var obj = enumdata.GetData4();
 
-            return ObjectExtension.To<Return_Type>(obj);
+            return ObjectExtension.To<T>(obj);
         }
-        public static Return_Type GetData5<T, Return_Type>(this T enumdata)
+        public static T GetData5<T>(this Enum enumdata)
         {
-            var obj = enumdata.GetData5<T>();
+            var obj = enumdata.GetData5();
 
-            return ObjectExtension.To<Return_Type>(obj);
+            return ObjectExtension.To<T>(obj);
         }
 
         #endregion
